@@ -34,6 +34,18 @@ public class Main {
                    clients.add(client);
                    break;
                case 2:
+                   if (clients.isEmpty()) {
+                       System.out.println("No clients registered");
+                   }
+                   else {
+                       for (Client currentClient : clients) {
+                           System.out.println(currentClient.getName());
+                           System.out.println(currentClient.getSurName());
+                           System.out.println(currentClient.getPhoneNumber());
+                       }
+                       break;
+
+                   }
                    for (Client currentClient : clients) {
                        System.out.println(currentClient.getName());
                        System.out.println(currentClient.getSurName());
