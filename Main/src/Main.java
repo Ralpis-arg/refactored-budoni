@@ -10,13 +10,25 @@ public class Main {
 
         ArrayList<Client> clients = new ArrayList<>();
 
-        Client client = createClient(scanner);
+
+
+        for (int i = 0; i < 3; i++) {
+            Client client = createClient(scanner);
+
+            clients.add(client);
+        }
+
+        for (Client client : clients) {
+            System.out.println(client.getName());
+            System.out.println(client.getSurName());
+            System.out.println(client.getPhoneNumber());
+        }
 
 
 
-        System.out.println(client.getName());
-        System.out.println(client.getSurName());
-        System.out.println(client.getPhoneNumber());
+
+
+
         
     }
     public static Client createClient(Scanner scanner) {
