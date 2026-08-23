@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -7,8 +8,11 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        ArrayList<Client> clients = new ArrayList<>();
+
         Client client = createClient(scanner);
-        scanner.close();
+
+
 
         System.out.println(client.getName());
         System.out.println(client.getSurName());
