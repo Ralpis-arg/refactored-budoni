@@ -4,25 +4,54 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        // we have to get the Client attributes first
-
         Scanner scanner = new Scanner(System.in);
-
         ArrayList<Client> clients = new ArrayList<>();
 
+        // Budoni Menu
+
+       int option = 0;
+        while (option != 3) {
+
+            // show menu
+            System.out.println("======");
+            System.out.println("BUDONI");
+            System.out.println("======");
+            System.out.println();
+            System.out.println("1. Create client");
+            System.out.println("2. Show clients");
+            System.out.println("3. Quit");
+
+            // ask option
+            System.out.print("Choose an option: ");
+           option = scanner.nextInt();
+           scanner.nextLine();
+
+           // correct this
+           switch (option) {
+               case 1:
+                   Client client = createClient(scanner);
+
+                   clients.add(client);
+                   break;
+               case 2:
+                   for (Client currentClient : clients) {
+                       System.out.println(currentClient.getName());
+                       System.out.println(currentClient.getSurName());
+                       System.out.println(currentClient.getPhoneNumber());
+                   }
+                   break;
+
+           }
 
 
-        for (int i = 0; i < 3; i++) {
-            Client client = createClient(scanner);
 
-            clients.add(client);
+
         }
 
-        for (Client client : clients) {
-            System.out.println(client.getName());
-            System.out.println(client.getSurName());
-            System.out.println(client.getPhoneNumber());
-        }
+        // we have to get the Client attributes first
+
+
+
 
 
 
