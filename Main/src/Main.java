@@ -10,7 +10,7 @@ public class Main {
         // Budoni Menu
 
        int option = 0;
-        while (option != 3) {
+        while (option != 4) {
 
             // show menu
             System.out.println("======");
@@ -19,7 +19,8 @@ public class Main {
             System.out.println();
             System.out.println("1. Create client");
             System.out.println("2. Show clients");
-            System.out.println("3. Quit");
+            System.out.println("3. Search client");
+            System.out.println("4. Quit");
 
             // ask option
             System.out.print("Choose an option: ");
@@ -47,6 +48,26 @@ public class Main {
 
                    }
                case 3:
+                   String phoneToSearch;
+
+                   System.out.println("Enter the client's phone number to search: ");
+                   phoneToSearch = scanner.nextLine();
+
+                   boolean found = false;
+
+                   for (Client currentClient : clients) {
+                       if (phoneToSearch.equals(currentClient.getPhoneNumber())) {
+                           System.out.println(currentClient.getName());
+                           System.out.println(currentClient.getSurName());
+                           System.out.println(currentClient.getPhoneNumber());
+                           found = true;
+                       }
+                   }
+                   if (!found) {
+                       System.out.println("Client not found");
+                   }
+                   break;
+               case 4:
                    System.out.println("Thanks for using this service");
                    break;
 
