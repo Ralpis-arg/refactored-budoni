@@ -26,8 +26,8 @@ public class Main {
            option = scanner.nextInt();
            scanner.nextLine();
 
-           // correct this
            switch (option) {
+               // we have to get the Client attributes first
                case 1:
                    Client client = createClient(scanner);
 
@@ -46,11 +46,8 @@ public class Main {
                        break;
 
                    }
-                   for (Client currentClient : clients) {
-                       System.out.println(currentClient.getName());
-                       System.out.println(currentClient.getSurName());
-                       System.out.println(currentClient.getPhoneNumber());
-                   }
+               case 3:
+                   System.out.println("Thanks for using this service");
                    break;
 
            }
@@ -58,9 +55,10 @@ public class Main {
 
 
 
+
         }
 
-        // we have to get the Client attributes first
+
 
 
 
