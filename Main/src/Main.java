@@ -10,7 +10,7 @@ public class Main {
         // Budoni Menu
 
        int option = 0;
-        while (option != 5) {
+        while (option != 6) {
 
             // show menu
             System.out.println("======");
@@ -21,7 +21,8 @@ public class Main {
             System.out.println("2. Show clients");
             System.out.println("3. Search client");
             System.out.println("4. Delete client");
-            System.out.println("5. Quit");
+            System.out.println("5. Update client");
+            System.out.println("6. Quit");
 
             // ask option
             System.out.print("Choose an option: ");
@@ -91,6 +92,30 @@ public class Main {
 
                    break;
                case 5:
+                   String oldNumber;
+                   System.out.println("Enter the client's old phone number to update");
+                   oldNumber = scanner.nextLine();
+                   
+                   Client toUpdate = null;
+                   
+                   for (Client currentClient : clients) {
+                       if (oldNumber.equals(currentClient.getPhoneNumber())) {
+                           toUpdate = currentClient;
+                           break;
+                       }
+                   }
+                   if (toUpdate != null) {
+                       System.out.println("Enter the client's new phone number: ");
+                       String newPhoneNumber = scanner.nextLine();
+                       toUpdate.setPhoneNumber(newPhoneNumber);
+
+                       System.out.printf("Phone number of %s %s successfuly updated!%n",
+                               toUpdate.getName(),
+                               toUpdate.getSurName());
+                   }
+                   
+                   break;
+               case 6:
                    System.out.println("Thanks for using this service");
                    break;
 
