@@ -10,7 +10,7 @@ public class Main {
         // Budoni Menu
 
        int option = 0;
-        while (option != 4) {
+        while (option != 5) {
 
             // show menu
             System.out.println("======");
@@ -20,7 +20,8 @@ public class Main {
             System.out.println("1. Create client");
             System.out.println("2. Show clients");
             System.out.println("3. Search client");
-            System.out.println("4. Quit");
+            System.out.println("4. Delete client");
+            System.out.println("5. Quit");
 
             // ask option
             System.out.print("Choose an option: ");
@@ -44,9 +45,8 @@ public class Main {
                            System.out.println(currentClient.getSurName());
                            System.out.println(currentClient.getPhoneNumber());
                        }
-                       break;
-
                    }
+                   break;
                case 3:
                    String phoneToSearch;
 
@@ -68,6 +68,29 @@ public class Main {
                    }
                    break;
                case 4:
+                   String phoneToDelete;
+
+                   System.out.println("Enter the client's phone number to delete: ");
+                   phoneToDelete = scanner.nextLine();
+
+                   Client toDelete = null;
+
+                   for (Client currentClient : clients) {
+                       if (phoneToDelete.equals(currentClient.getPhoneNumber())) {
+                            toDelete = currentClient;
+                            break;
+                       }
+                   }
+                   if (toDelete != null) {
+                       clients.remove(toDelete);
+                       System.out.println("Client deleted successfully");
+                   }
+                   else {
+                       System.out.println("Client not found");
+                   }
+
+                   break;
+               case 5:
                    System.out.println("Thanks for using this service");
                    break;
 
